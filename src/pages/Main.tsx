@@ -1,9 +1,18 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export default function Main() {
   return (
     <StWrapper>
-      <StBox />
+      <StBox
+        initial={{ scale: 0 }}
+        animate={{ scale: 1, rotate: 180 }}
+        transition={{
+          type: "spring",
+          stiffness: 260, // 100 by default
+          damping: 20, // 10 by default
+        }}
+      />
     </StWrapper>
   );
 }
@@ -16,7 +25,7 @@ const StWrapper = styled.div`
   align-items: center;
 `;
 
-const StBox = styled.div`
+const StBox = styled(motion.div)`
   width: 200px;
   height: 200px;
   background-color: white;
