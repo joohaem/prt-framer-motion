@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export default function Main() {
   return (
-    <Wrapper>
-      <Box />
-    </Wrapper>
+    <StWrapper>
+      <StBox />
+    </StWrapper>
   );
 }
 
-const Wrapper = styled.div`
+const StWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -16,10 +16,10 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Box = styled.div`
+const StBox = styled.div`
   width: 200px;
   height: 200px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;

@@ -1,9 +1,10 @@
-# Getting Started with Boilerplate React App
+# Framer Motion
 
-- edit CRA
-- add src folders
-- configure absolute paths (not alias)
-- yarn add react-router-dom
-- yarn add typescript @types/node @types/react @types/react-dom @types/jest
+[공식문서](https://www.framer.com/docs/introduction/)
+[깃허브](https://github.com/framer/motion)
 
-**Gradually Developing...**
+### Props
+
+- transition
+- initial
+- animate
