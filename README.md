@@ -8,7 +8,33 @@
 - initial
 - animate
 - transition
+- variants
 
 ### initial
 
+- initial value
+
+### animate
+
+- changing value
+
+### transition
+
 - `bounce` and `duration` will be overridden if `stiffness`, `damping` or `mass` are set
+
+### variants
+
+- variants object를 만들고,
+  property 이름을 지정해 작성하면,
+  motion은 이를 찾는다
+
+  ```javascript
+  const myVars = {
+    start: { scale: 0 },
+    end: { scale: 1, rotateZ: 360, transition: { type: "spring", delay: 0.5 } },
+  };
+  ```
+
+  ```javascript
+  <Box variants={myVars} initial="start" animate="end" />
+  ```
