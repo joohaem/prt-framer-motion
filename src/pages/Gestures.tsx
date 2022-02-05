@@ -2,12 +2,14 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export default function Gestures() {
+  const boxVariants = {
+    hover: { scale: 1.2, rotate: 90 },
+    click: { scale: 0.8, rotate: -90, borderRadius: "100%" },
+  };
+
   return (
     <StWrapper>
-      <StBox
-        whileHover={{ scale: 1.2, rotate: 90 }}
-        whileTap={{ scale: 0.8, rotate: -90, borderRadius: "100%" }}
-      />
+      <StBox variants={boxVariants} whileHover="hover" whileTap="click" />
     </StWrapper>
   );
 }
