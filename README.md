@@ -10,6 +10,7 @@
 - transition
 - variants
 - whielHover / whileTap
+- drag / dragContraints
 
 ### initial
 
@@ -21,7 +22,9 @@
 
 ### transition
 
-- `bounce` and `duration` will be overridden if `stiffness`, `damping` or `mass` are set
+- `bounce`(0.8) and `duration`(0.3) will be overridden if `stiffness`(100), `damping`(10) or `mass`(1) are set
+
+- type `spring` by default
 
 ### variants
 
@@ -43,5 +46,9 @@
 - 자식 컴포넌트들은 부모 컴포넌트의 `initial`과 `animate` 속성을 상속받는다
 
 ### whielHover / whileTap
+
+-
+
+### drag / dragContraints
 
 -
