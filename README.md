@@ -38,3 +38,5 @@
   ```javascript
   <Box variants={myVars} initial="start" animate="end" />
   ```
+
+- 자식 컴포넌트들은 부모 컴포넌트의 `initial`과 `animate` 속성을 상속받는다
