@@ -47,8 +47,16 @@
 
 ### whielHover / whileTap
 
--
+- 이외 `whileFocus`, `whileDrag`, `whileInView`
 
-### drag / dragContraints
+### drag / dragContraints / dragElastic
 
--
+- `drag="x"`, `drag="y"` 로 축을 제한할 수 있다
+
+- ```javascript
+  dragContraints={{ top: 0, right: 0, bottom: 0, left: 0, }}
+
+  // === dragSnapToOrigin 속성
+  ```
+
+  위처럼 직접 박스를 만들거나, `useRef`를 사용하여 제한한다
