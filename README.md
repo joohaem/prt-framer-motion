@@ -49,7 +49,7 @@
 
 - 이외 `whileFocus`, `whileDrag`, `whileInView`
 
-### drag / dragContraints / dragElastic
+### drag / dragContraints / dragElastic(0.5)
 
 - `drag="x"`, `drag="y"` 로 축을 제한할 수 있다
 

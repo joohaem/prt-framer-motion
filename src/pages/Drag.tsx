@@ -8,7 +8,12 @@ export default function Drag() {
   return (
     <StWrapper>
       <StBox ref={containerRef}>
-        <StInnerBox drag dragElastic={0} dragConstraints={containerRef} />
+        <StInnerBox
+          drag
+          dragSnapToOrigin
+          dragElastic={1}
+          dragConstraints={containerRef}
+        />
       </StBox>
     </StWrapper>
   );
