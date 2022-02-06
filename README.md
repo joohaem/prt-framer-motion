@@ -4,17 +4,23 @@
 
 [깃허브](https://github.com/framer/motion)
 
+### 목차
+
 ```
 .
-├── 1. Animation
-├── 2. Variants
-├── 3. Gestures
-├── 4. Drag
-├── 5. Scroll
-├── 6. Path
-├── 7. Slider
-├── 8. Layout
-└── 9. ModalLayout
+├── Props
+│   ├── initial
+│   ├── animate
+│   ├── transition
+│   ├── variants
+│   ├── custom
+│   ├── style
+│   ├── whielHover / whileTap
+│   ├── drag / dragContraints
+│   └── layout / layoutId
+├── Motion Value
+├── SVG path animation
+└── AnimatePresence
 ```
 
 # Props
