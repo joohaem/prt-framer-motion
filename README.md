@@ -10,6 +10,7 @@
 - animate
 - transition
 - variants
+- style
 - whielHover / whileTap
 - drag / dragContraints
 
@@ -45,6 +46,10 @@
   ```
 
 - 자식 컴포넌트들은 부모 컴포넌트의 `initial`과 `animate` 속성을 상속받는다
+
+### style
+
+- `x`, `y`, `scale`, `heigth`, `backgroundColor` 등 css value
 
 ### whielHover / whileTap
 
