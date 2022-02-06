@@ -3,44 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Header() {
-  const [navIndex, setNavIndex] = useState<number>(0);
   const location = useLocation();
   const pathname = location.pathname;
-
-  useEffect(() => {
-    switch (pathname) {
-      case "/1":
-        setNavIndex(0);
-        break;
-      case "/2":
-        setNavIndex(1);
-        break;
-      case "/3":
-        setNavIndex(2);
-        break;
-      case "/4":
-        setNavIndex(3);
-        break;
-      case "/5-0":
-        setNavIndex(4);
-        break;
-      case "/5":
-        setNavIndex(5);
-        break;
-      case "/6":
-        setNavIndex(6);
-        break;
-      case "/7":
-        setNavIndex(7);
-        break;
-      case "/8":
-        setNavIndex(8);
-        break;
-      case "/9":
-        setNavIndex(9);
-        break;
-    }
-  }, [pathname]);
 
   return (
     <StNav>
