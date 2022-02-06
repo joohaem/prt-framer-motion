@@ -4,7 +4,7 @@
 
 [깃허브](https://github.com/framer/motion)
 
-## Props
+# Props
 
 - initial
 - animate
@@ -27,6 +27,14 @@
 - `bounce`(0.8) and `duration`(0.3) will be overridden if `stiffness`(100), `damping`(10) or `mass`(1) are set
 
 - type `spring` by default
+
+- ```javascript
+  transition={{
+    default: { duration: 2 },
+    fill: { duration: 3, delay: 1 },
+  }}
+  ```
+  위처럼 속성별로 `duration` 값을 다르게 설정할 수 있다
 
 ### variants
 
@@ -67,7 +75,7 @@
 
   위처럼 직접 박스를 만들거나, `useRef`를 사용하여 제한한다
 
-## Motion Value
+# Motion Value
 
 - ```javascript
   const x = useMotionValue(0);
@@ -76,3 +84,46 @@
   ```
 
 - `useMotionValue(0)` 등 MotionValue가 바뀌어도, React state로 살지 않기 때문에, 리렌더링 되지 않는다(`without triggering React's render cycle`)
+
+# SVG path animation
+
+- ```javascript
+  const StSvg = styled.svg`
+    width: 200px;
+    height: 200px;
+    stroke: #f53000;
+    stroke-width: 0.3;
+  `;
+  ```
+
+  `svg`의 `SC` 설정으로 `stroke` 혹은 `stroke-width` 설정이 가능하다
+
+  ```javascript
+  const svgVariants = {
+    start: {
+      pathLength: 0,
+      fill: "rgba(255, 255, 255, 0)",
+    },
+    end1: {
+      pathLength: 1,
+      fill: "#F53000",
+    },
+  };
+  ```
+
+  `pathLength`나 `fill` 속성의 애니메이션을 variants로 선언하여 아래 코드와 같이 지정한다
+
+  ```javascript
+  <StSvg viewBox="0 0 25 27" xmlns="http://www.w3.org/2000/svg">
+    <motion.path
+      variants={svgVariants}
+      initial="start"
+      animate="end1"
+      transition={{
+        default: { duration: 2 },
+        fill: { duration: 3, delay: 1 },
+      }}
+      d="M5.0416 10.4955H0.553223L5.73268 15.6277V12.053V10.4955H5.0416Z"
+    ></motion.path>
+  </StSvg>
+  ```
