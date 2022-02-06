@@ -1,6 +1,7 @@
 # Framer Motion
 
 [공식문서](https://www.framer.com/docs/introduction/)
+
 [깃허브](https://github.com/framer/motion)
 
 ## Props
@@ -60,3 +61,7 @@
   ```
 
   위처럼 직접 박스를 만들거나, `useRef`를 사용하여 제한한다
+
+## Motion Value
+
+- `useMotionValue(0)` 등 MotionValue가 바뀌어도, React state로 살지 않기 때문에, 리렌더링 되지 않는다(`without triggering React's render cycle`)

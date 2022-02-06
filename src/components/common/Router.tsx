@@ -4,6 +4,7 @@ import Animation from "pages/Animation";
 import Variants from "pages/Variants";
 import Gestures from "pages/Gestures";
 import Drag from "pages/Drag";
+import Scroll from "pages/Scroll";
 
 export default function Router() {
   return (
@@ -13,6 +14,7 @@ export default function Router() {
         <Route path="/2" element={<Variants />} />
         <Route path="/3" element={<Gestures />} />
         <Route path="/4" element={<Drag />} />
+        <Route path="/5" element={<Scroll />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
