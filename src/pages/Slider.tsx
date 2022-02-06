@@ -4,15 +4,23 @@ import styled from "styled-components";
 
 export default function Slider() {
   const [idxVisible, setIdxVisible] = useState(1);
-  const nextPlease = () =>
+  const [isBack, setIsBack] = useState(false);
+  const nextPlease = () => {
+    setIsBack(false);
     setIdxVisible((prev) => (prev === 10 ? 10 : prev + 1));
-  const prevPlease = () => setIdxVisible((prev) => (prev === 1 ? 1 : prev - 1));
+  };
+  const prevPlease = () => {
+    setIsBack(true);
+    setIdxVisible((prev) => (prev === 1 ? 1 : prev - 1));
+  };
 
   const boxVariants = {
-    invisible: {
-      x: 500,
-      opacity: 0,
-      scale: 0,
+    invisible: (isBack: boolean) => {
+      return {
+        x: isBack ? -500 : 500,
+        opacity: 0,
+        scale: 0,
+      };
     },
     visible: {
       x: 0,
@@ -22,13 +30,21 @@ export default function Slider() {
         duration: 1,
       },
     },
-    exit: { x: -500, opacity: 0, scale: 0, transition: { duration: 1 } },
+    exit: (isBack: boolean) => {
+      return {
+        x: isBack ? 500 : -500,
+        opacity: 0,
+        scale: 0,
+        transition: { duration: 1 },
+      };
+    },
   };
 
   return (
     <StWrapper>
-      <AnimatePresence>
+      <AnimatePresence custom={isBack}>
         <StBox
+          custom={isBack}
           variants={boxVariants}
           initial="invisible"
           animate="visible"

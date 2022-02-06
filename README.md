@@ -10,6 +10,7 @@
 - animate
 - transition
 - variants
+- custom
 - style
 - whielHover / whileTap
 - drag / dragContraints
@@ -54,6 +55,34 @@
   ```
 
 - 자식 컴포넌트들은 부모 컴포넌트의 `initial`과 `animate` 속성을 상속받는다
+
+### custom
+
+- 요소의 `exit` 속성이나 `variants` 속성 등을 동적으로 정의할 수 있다, 이를 통해 제거되는 요소가 최신 데이터를 사용하여 애니메이션된다
+
+  ```javascript
+  const boxVariants = {
+    invisible: (isBack: boolean) => {
+      return {
+        x: isBack ? -500 : 500,
+        opacity: 0,
+        scale: 0,
+      };
+    },
+  };
+  ```
+
+  ```javascript
+  <AnimatePresence custom={isBack}>
+    <StBox
+      custom={isBack}
+      variants={boxVariants}
+      initial="invisible"
+      animate="visible"
+      exit="exit"
+    />
+  </AnimatePresence>
+  ```
 
 ### style
 
@@ -130,7 +159,9 @@
 
 # AnimatePresence
 
-- `AnimatePresence`의 자식 요소가 React 트리에서 제거될 때 애니메이션을 제거할 수 있다 (`setTimeout()` 함수와 같이 unmount를 요소에 알리고 애니메이션이 완료될 때까지 지연시킨다)
+- `AnimatePresence`의 자식 요소가 React 트리에서 제거될 때 애니메이션을 제거할 수 있다. 즉, unmount를 요소에 알리고 애니메이션이 완료될 때까지 지연시킨다
 
 - 자식 요소인 각 `motion` 컴포넌트들은 고유한 `key`값이 있어야, 트리에서 `AnimatePresence`가 컴포넌트의 존재를 추적할 수 있다
   따라서, `key`값만을 활용하여 컴포넌트의 `exit` 애니메이션을 활성화할 수 있다
+
+- `exitBeforeEnter` 속성이 `true`이면, `setTimeout()` 함수와 같이 exit 애니메이션이 모두 끝난 후에 새 컴포넌트가 rendering 된다
