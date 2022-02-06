@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
 import Error404 from "pages/Error404";
 import Animation from "pages/Animation";
 import Variants from "pages/Variants";
@@ -14,7 +14,7 @@ import Header from "./Header";
 
 export default function Router() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <Routes>
         <Route path="" element={<Navigate to="/1" />} />
@@ -30,6 +30,6 @@ export default function Router() {
         <Route path="/9" element={<ModalLayout />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
