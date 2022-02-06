@@ -9,6 +9,7 @@ import Scroll from "pages/Scroll";
 import Path from "pages/Path";
 import Slider from "pages/Slider";
 import Layout from "pages/Layout";
+import ModalLayout from "pages/ModalLayout";
 
 export default function Router() {
   return (
@@ -24,6 +25,7 @@ export default function Router() {
         <Route path="/6" element={<Path />} />
         <Route path="/7" element={<Slider />} />
         <Route path="/8" element={<Layout />} />
+        <Route path="/9" element={<ModalLayout />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
