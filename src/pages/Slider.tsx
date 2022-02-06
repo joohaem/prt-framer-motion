@@ -73,7 +73,7 @@ const StBox = styled(motion.div)`
   height: 200px;
 
   position: absolute;
-  top: 100px;
+  bottom: 100px;
 
   display: flex;
   justify-content: center;
