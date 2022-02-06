@@ -10,10 +10,12 @@ import Path from "pages/Path";
 import Slider from "pages/Slider";
 import Layout from "pages/Layout";
 import ModalLayout from "pages/ModalLayout";
+import Header from "./Header";
 
 export default function Router() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="" element={<Navigate to="/1" />} />
         <Route path="/1" element={<Animation />} />
