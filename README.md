@@ -64,4 +64,10 @@
 
 ## Motion Value
 
+- ```javascript
+  const x = useMotionValue(0);
+  // useTransform(motionValue, inputRange, outputRange[, options])
+  const scale = useTransform(x, [-800, 0, 800], [2, 1, 0.1]);
+  ```
+
 - `useMotionValue(0)` 등 MotionValue가 바뀌어도, React state로 살지 않기 때문에, 리렌더링 되지 않는다(`without triggering React's render cycle`)
