@@ -14,6 +14,7 @@
 - style
 - whielHover / whileTap
 - drag / dragContraints
+- layout / layoutId
 
 ### initial
 
@@ -103,6 +104,12 @@
   ```
 
   위처럼 직접 박스를 만들거나, `useRef`를 사용하여 제한한다
+
+### layout / layoutId
+
+- `layout` 속성을 추가하면, 컴포넌트가 layout이 바뀔 때 애니메이션이 자동으로 활성화된다
+
+- 서로 다른 컴포넌트에 `layoutId` 속성값을 같은 값으로 주면, 둘을 연결(shared)되는 애니메이션이 자동으로 활성화된다
 
 # Motion Value
 
