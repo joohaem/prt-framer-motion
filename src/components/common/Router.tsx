@@ -7,6 +7,7 @@ import Drag from "pages/Drag";
 import Motion from "pages/Motion";
 import Scroll from "pages/Scroll";
 import Path from "pages/Path";
+import Slider from "pages/Slider";
 
 export default function Router() {
   return (
@@ -20,6 +21,7 @@ export default function Router() {
         <Route path="/5-0" element={<Motion />} />
         <Route path="/5" element={<Scroll />} />
         <Route path="/6" element={<Path />} />
+        <Route path="/7" element={<Slider />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
