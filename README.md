@@ -130,6 +130,7 @@
 
 # AnimatePresence
 
-- `AnimatePresence`의 자식 요소가 React 트리에서 제거될 때 애니메이션을 제거할 수 있다 (`setTimeout()` 함수와 같이 unmount를 요소에 알리고 애니메이션이 완료될 때까지 연기시킨다)
+- `AnimatePresence`의 자식 요소가 React 트리에서 제거될 때 애니메이션을 제거할 수 있다 (`setTimeout()` 함수와 같이 unmount를 요소에 알리고 애니메이션이 완료될 때까지 지연시킨다)
 
 - 자식 요소인 각 `motion` 컴포넌트들은 고유한 `key`값이 있어야, 트리에서 `AnimatePresence`가 컴포넌트의 존재를 추적할 수 있다
+  따라서, `key`값만을 활용하여 컴포넌트의 `exit` 애니메이션을 활성화할 수 있다
