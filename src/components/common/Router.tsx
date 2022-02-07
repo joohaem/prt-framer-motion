@@ -24,12 +24,12 @@ export default function Router() {
         <Route path="/2" element={<Variants />} />
         <Route path="/3" element={<Gestures />} />
         <Route path="/4" element={<Drag />} />
-        <Route path="/5-0" element={<Motion />} />
-        <Route path="/5" element={<Scroll />} />
-        <Route path="/6" element={<Path />} />
-        <Route path="/7" element={<Slider />} />
-        <Route path="/8" element={<Layout />} />
-        <Route path="/9" element={<ModalLayout />} />
+        <Route path="/5" element={<Motion />} />
+        <Route path="/6" element={<Scroll />} />
+        <Route path="/7" element={<Path />} />
+        <Route path="/8" element={<Slider />} />
+        <Route path="/9" element={<Layout />} />
+        <Route path="/10" element={<ModalLayout />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </HashRouter>

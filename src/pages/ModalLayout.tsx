@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export default function ModalLayout() {
   const [whatId, setWhatId] = useState<null | string>(null);
-  console.log(whatId);
+
   return (
     <StWrapper>
       <StGrid>

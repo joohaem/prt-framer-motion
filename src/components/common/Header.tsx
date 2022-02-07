@@ -13,6 +13,73 @@ export default function Header() {
     setIsShowingMenuList((prev) => !prev);
   };
 
+  const menuListsData = [
+    {
+      order: "1",
+      theme: "Animation",
+    },
+    {
+      order: "2",
+      theme: "Variants",
+    },
+    {
+      order: "3",
+      theme: "Gestures",
+    },
+    {
+      order: "4",
+      theme: "Drag",
+    },
+    {
+      order: "5",
+      theme: "Motion",
+    },
+    {
+      order: "6",
+      theme: "Scroll",
+    },
+    {
+      order: "7",
+      theme: "Path",
+    },
+    {
+      order: "8",
+      theme: "Slider",
+    },
+    {
+      order: "9",
+      theme: "Layout",
+    },
+    {
+      order: "10",
+      theme: "ModalLayout",
+    },
+  ];
+  const detailsData = (targetPathname: string) => {
+    switch (targetPathname) {
+      case "/1":
+        return <Detail>Refresh it !</Detail>;
+      case "/2":
+        return <Detail>Refresh it !</Detail>;
+      case "/3":
+        return <Detail>Hover n Click it !</Detail>;
+      case "/4":
+        return <Detail>Drag it !</Detail>;
+      case "/5":
+        return <Detail>Drag it on X-axis !</Detail>;
+      case "/6":
+        return <Detail>Scroll !</Detail>;
+      case "/7":
+        return <Detail>Refresh it !</Detail>;
+      case "/8":
+        return <Detail>Click buttons !</Detail>;
+      case "/9":
+        return <Detail>Click anywhere !</Detail>;
+      case "/10":
+        return <Detail>Click it !</Detail>;
+    }
+  };
+
   return (
     <>
       <StNav>
@@ -27,40 +94,18 @@ export default function Header() {
         )}
         {isShowingMenuList && (
           <StUl onClick={toggleShowingMenuList} layoutId="menu">
-            <StLi current={pathname === "/1"}>
-              <StLink to="/1">Animation</StLink>
-            </StLi>
-            <StLi current={pathname === "/2"}>
-              <StLink to="/2">Variants</StLink>
-            </StLi>
-            <StLi current={pathname === "/3"}>
-              <StLink to="/3">Gestures</StLink>
-            </StLi>
-            <StLi current={pathname === "/4"}>
-              <StLink to="/4">Drag</StLink>
-            </StLi>
-            <StLi current={pathname === "/5-0"}>
-              <StLink to="/5-0">Motion</StLink>
-            </StLi>
-            <StLi current={pathname === "/5"}>
-              <StLink to="/5">Scroll</StLink>
-            </StLi>
-            <StLi current={pathname === "/6"}>
-              <StLink to="/6">Path</StLink>
-            </StLi>
-            <StLi current={pathname === "/7"}>
-              <StLink to="/7">Slider</StLink>
-            </StLi>
-            <StLi current={pathname === "/8"}>
-              <StLink to="/8">Layout</StLink>
-            </StLi>
-            <StLi current={pathname === "/9"}>
-              <StLink to="/9">ModalLayout</StLink>
-            </StLi>
+            {menuListsData.map((menuData) => (
+              <StLi
+                current={pathname === `/${menuData.order}`}
+                key={`menu-${menuData.order}`}
+              >
+                <StLink to={`/${menuData.order}`}>{menuData.theme}</StLink>
+              </StLi>
+            ))}
           </StUl>
         )}
       </StNav>
-      <Detail>asd</Detail>
+      {detailsData(pathname)}
     </>
   );
 }
