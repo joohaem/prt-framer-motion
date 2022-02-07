@@ -1,15 +1,17 @@
+import {
+  Animation,
+  Drag,
+  Error404,
+  Gestures,
+  Layout,
+  ModalLayout,
+  Motion,
+  Path,
+  Scroll,
+  Slider,
+  Variants,
+} from "pages";
 import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
-import Error404 from "pages/Error404";
-import Animation from "pages/Animation";
-import Variants from "pages/Variants";
-import Gestures from "pages/Gestures";
-import Drag from "pages/Drag";
-import Motion from "pages/Motion";
-import Scroll from "pages/Scroll";
-import Path from "pages/Path";
-import Slider from "pages/Slider";
-import Layout from "pages/Layout";
-import ModalLayout from "pages/ModalLayout";
 import Header from "./Header";
 
 export default function Router() {
