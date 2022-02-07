@@ -54,8 +54,10 @@ export default function Slider() {
           {idxVisible}
         </StBox>
       </AnimatePresence>
-      <button onClick={nextPlease}>next</button>
-      <button onClick={prevPlease}>prev</button>
+      <StBtnWrapper>
+        <StBtn onClick={prevPlease}>prev</StBtn>
+        <StBtn onClick={nextPlease}>next</StBtn>
+      </StBtnWrapper>
     </StWrapper>
   );
 }
@@ -64,8 +66,10 @@ const StWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
 
 const StBox = styled(motion.div)`
@@ -73,7 +77,7 @@ const StBox = styled(motion.div)`
   height: 200px;
 
   position: absolute;
-  bottom: 100px;
+  bottom: 50%;
 
   display: flex;
   justify-content: center;
@@ -82,5 +86,30 @@ const StBox = styled(motion.div)`
 
   background-color: rgba(255, 255, 255, 1);
   border-radius: 40px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+`;
+
+const StBtnWrapper = styled.div`
+  position: absolute;
+  top: 60%;
+
+  display: flex;
+  gap: 20px;
+`;
+
+const StBtn = styled.button`
+  width: 200px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #ff4c00;
+  color: white;
+
+  outline: none;
+  border-radius: 40px;
+  border: none;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
