@@ -51,7 +51,7 @@ https://sad-wing-00b0bb.netlify.app
 
 - `bounce`(0.8) and `duration`(0.3) will be overridden if `stiffness`(100), `damping`(10) or `mass`(1) are set
 
-- type `spring` by default
+- type `spring` by default (`tween` is no non-orchestration and `inertia` is for natural deceleration)
 
 - ```javascript
   transition={{
