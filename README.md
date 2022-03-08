@@ -199,3 +199,21 @@ https://sad-wing-00b0bb.netlify.app
 - `exitBeforeEnter` 속성이 `true`이면, `setTimeout()` 함수와 같이 exit 애니메이션이 모두 끝난 후에 새 컴포넌트가 rendering 된다
 
 - `exitBeforeEnter` 속성이 `true`이면, `AnimatePresence`의 자식 요소는 하나의 컴포넌트만 와야 한다
+
+  ```javascript
+  <AnimatePresence exitBeforeEnter>
+    <motion.div
+      key="firstSignup"
+      transition={{
+        default: { duration: 1 },
+      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}>
+      <StParagraph>당신의 이메일을 입력해 주세요.</StParagraph>
+      <StForm onSubmit={handleSubmit}>
+        ...
+      </StForm>
+    </motion.div>
+  </AnimatePresence>
+  ```
