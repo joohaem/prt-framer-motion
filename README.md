@@ -194,4 +194,8 @@ https://sad-wing-00b0bb.netlify.app
 - 자식 요소인 각 `motion` 컴포넌트들은 고유한 `key`값이 있어야, 트리에서 `AnimatePresence`가 컴포넌트의 존재를 추적할 수 있다
   따라서, `key`값만을 활용하여 컴포넌트의 `exit` 애니메이션을 활성화할 수 있다
 
+### exitBeforeEnter
+
 - `exitBeforeEnter` 속성이 `true`이면, `setTimeout()` 함수와 같이 exit 애니메이션이 모두 끝난 후에 새 컴포넌트가 rendering 된다
+
+- `exitBeforeEnter` 속성이 `true`이면, `AnimatePresence`의 자식 요소는 하나의 컴포넌트만 와야 한다
