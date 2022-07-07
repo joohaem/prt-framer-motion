@@ -84,6 +84,8 @@ https://sad-wing-00b0bb.netlify.app
 
 - 요소의 `exit` 속성이나 `variants` 속성 등을 동적으로 정의할 수 있다, 이를 통해 제거되는 요소가 최신 데이터를 사용하여 애니메이션된다
 
+  (Translate shortcuts: `x`, `y`, `z`)
+
   ```javascript
   const boxVariants = {
     invisible: (isBack: boolean) => {
